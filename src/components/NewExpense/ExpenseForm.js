@@ -21,7 +21,7 @@ const ExpenseForm = () => {
     setenterdamount('');
     setenterddate('');
   }
-
+/////its just a test
   const titelchangehandeler=(e)=>{
     setenterdtitle(e.target.value);
   }  
