@@ -2,7 +2,7 @@ import './ExpenseForm.css'
 import React,{useState} from 'react'
 
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enterdtitle,setenterdtitle]  =useState('');
   const [enterdamount,setenterdamount]  =useState('');
   const [enterddate,setenterddate]  =useState('');
@@ -15,13 +15,13 @@ const ExpenseForm = () => {
         amount:enterdamount,
         date:new Date(enterddate)
     }
-    console.log(expensedata);
+    props.onexpensedata(expensedata);
 
     setenterdtitle('');
     setenterdamount('');
     setenterddate('');
   }
-/////its just a test
+
   const titelchangehandeler=(e)=>{
     setenterdtitle(e.target.value);
   }  

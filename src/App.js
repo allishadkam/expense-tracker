@@ -1,6 +1,13 @@
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 const App=()=> {
+  const addexpensehandeler=data=>{
+  const  enterdexpesnedata={
+    ...data,
+    id:Math.random().toString()
+  }
+  console.log(enterdexpesnedata)
+  }
   const expenses = [
     {
       id: 'e1',
@@ -25,7 +32,7 @@ const App=()=> {
 
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onsaveexpensedata={addexpensehandeler}/>
       <Expenses items={expenses} />
     </div>
   );
