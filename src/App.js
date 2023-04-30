@@ -38,7 +38,7 @@ const App=()=> {
 
   return (
     <div>
-      <NewExpense onsaveexpensedata={addexpensehandeler}/>
+      <NewExpense onAddExpense={addexpensehandeler}/>
       <Expenses items={expenses} />
     </div>
   );
