@@ -1,0 +1,6 @@
+.main{
+    position: sticky;
+    left: 1200px;
+    background-color: aqua;
+    border-radius: 20px;
+}

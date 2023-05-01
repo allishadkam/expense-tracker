@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
-
+import Sum from './components/sum/Sum';
 const Dummy_data = [
   {
     id: 'e1',
@@ -27,19 +27,31 @@ const Dummy_data = [
 
 
 const App=()=> {
-
+  const [filteredyear,setfilteredyear]=useState([])
   const [expenses,setexpenses] = useState(Dummy_data)
   const addexpensehandeler = data =>{
   setexpenses(prevExpenses =>{
     return [data,...prevExpenses]
   })
+  expenses.map(exp=>{
+    localStorage.setItem(exp.id,exp.amount)
+    return 0;
+  })
+  
   };
+
+  const filter=(index)=>{
+    setfilteredyear(index);
+  }
+
+  
   
 
   return (
     <div>
       <NewExpense onAddExpense={addexpensehandeler}/>
-      <Expenses items={expenses} />
+      <Sum items={expenses} fy={filteredyear} />
+      <Expenses items={expenses} getfiltered={filter}/>
     </div>
   );
 }
