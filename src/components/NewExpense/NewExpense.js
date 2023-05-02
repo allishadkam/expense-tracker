@@ -11,9 +11,18 @@ const NewExpense = (props) => {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
-    props.onAddExpense(expenseData);
+    if(expenseData.title==="" ||expenseData.date===""||expenseData.amount===""){
+      props.setAlert('error','Please Enter Values !')
+    }
+    else{
+      props.onAddExpense(expenseData);
     setIsEditing(false);
-    console.log(expenseData)
+    console.log(expenseData.title)
+    props.setAlert('success','This is a success message!')
+    }
+    
+    
+
   };
 
   const startEditingHandler = () => {
