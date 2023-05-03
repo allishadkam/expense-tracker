@@ -8,8 +8,8 @@ const NewExpense = (props) => {
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
-      ...enteredExpenseData,
-      id: Math.random().toString(),
+      id: Math.floor(Math.random() * 101).toString(),
+      ...enteredExpenseData
     };
     if(expenseData.title==="" ||expenseData.date===""||expenseData.amount===""){
       props.setAlert('error','Please Enter Values !')
@@ -18,7 +18,7 @@ const NewExpense = (props) => {
       props.onAddExpense(expenseData);
     setIsEditing(false);
     console.log(expenseData.title)
-    props.setAlert('success','This is a success message!')
+    props.setAlert('success','Your Exoense Successfully Added!')
     }
     
     

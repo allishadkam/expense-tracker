@@ -27,10 +27,7 @@ const Sum = (props) => {
     //temp.splice(0, 1)
     const sum = temp.reduce((partialSum, a) => partialSum + a, 0);
     const sum2 = temp2.reduce((partialSum, a) => partialSum + a, 0);
-    console.log(props.items)
-    console.log(temp)
-console.log(props.fy)
-//console.log(props.items)
+   
   return (
     <Box sx={{ flexGrow: 1,width : 800,marginLeft:45 }}>
       <Grid container spacing={2}>
