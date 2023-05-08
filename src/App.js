@@ -78,7 +78,7 @@ while ( i-- ) {
     return{id:item.id,title:item.title,amount:item.amount,date:new Date(item.date)}
    })
    
-
+///////////change
   setexpenses(changed)
     console.log(changed)
 }, [filteredyear]);
